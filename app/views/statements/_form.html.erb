@@ -1,0 +1,10 @@
+<%= form_for @statement do |f| %>
+  <div>
+  <%= f.text_area :question, :placeholder => "Enter your question here" %>
+</div>
+  <%= f.radio_button(:answer, true) %>
+  <%= f.label(:answer_true, "True") %>
+  <%= f.radio_button(:answer, false) %>
+  <%= f.label(:answer_false, "False") %>
+  <%= f.submit "Add Question" %>
+<% end %>

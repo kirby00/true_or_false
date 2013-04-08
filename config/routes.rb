@@ -1,4 +1,6 @@
 TrueOrFalse::Application.routes.draw do
+  resources :statements
+
   root :to => 'home#index'
 
   # The priority is based upon order of creation:
