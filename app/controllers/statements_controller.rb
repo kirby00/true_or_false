@@ -7,12 +7,18 @@ class StatementsController < ApplicationController
   end
 
   def create
-    @statement = Statement.create(params[:statement])
-    if @statement.save
-      redirect_to statements_path
-    else
-      render :new
+
+    if request.xhr?
+      statement = (params.slice("question", "answer"))
+      @statement = Statement.create(statement)
+      if @statement.save
+        render :json => { :status => 'true', :question => @statement.question }
+      else
+        render :json => { :status => 'false' }
+      end
     end
+
+
   end
 
   def edit

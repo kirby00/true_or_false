@@ -13,3 +13,32 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function() {
+
+  $('#add-question').submit(function(e) {
+
+    $.ajax({
+      url: "/statements",
+      type: "post",
+      data: $('#add-question').serialize(),
+
+      success: function(response)
+      {
+        if(response.status == "true")
+        {
+          $('body').prepend('<div class="alert alert-success">Question added to database.</div>');
+          $('#addQuestion').modal('hide');
+          $('ul').prepend('<li><p>' + response.question + '</p><a href="#">true</a> <a href="#">false</a></li>');
+        } else {
+          $('body').prepend('<div class="alert alert-error">Question not saved to database.</div>');
+          $('#addQuestion').modal('hide');
+        }
+
+      }
+    });
+    e.preventDefault();
+  });
+
+
+});
