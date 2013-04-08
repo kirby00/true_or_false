@@ -1,7 +1,14 @@
 
 <div id="container-fluid">
 <div id="row-fluid"><h1>Home#index</h1>
-
+  <ul>
+  <% @statements.each do |statement| %>
+    <li>
+      <p><%= statement.question %></p>
+      <a href="#">true</a> <a href="#">false</a>
+    </li>
+  <% end %>
+</ul>
 </div>
 </div>
 
