@@ -32,7 +32,11 @@
 <div class="row-fluid"><h3>Play true or false!</h3></div>
 
   <div class="row-fluid">
-    <a href="#addQuestion" role="button" class="btn offset8" data-toggle="modal">Add Question</a>
+    <% if current_user %>
+      <a href="#addQuestion" role="button" class="btn offset8" data-toggle="modal">Add question</a>
+    <% else %>
+      <div>Please sign in to play!</div>
+    <% end %>
   </div>
 
  <div class="row-fluid">
