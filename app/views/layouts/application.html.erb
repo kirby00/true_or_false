@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--added for mobile responsiveness -->
   <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -16,7 +17,10 @@
     </nav>
   </header>
 
-<%= yield %>
+<div class="container-fluid">
+  <%= yield %>
+</div>
+
 </div>
 </body>
 </html>
