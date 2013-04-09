@@ -9,7 +9,7 @@ class StatementsController < ApplicationController
   def create
 
     if request.xhr?
-      statement = (params.slice("question", "answer"))
+      statement = (params.slice("question", "answer", "user_id"))
       @statement = Statement.create(statement)
       if @statement.save
         render :json => { :status => 'true', :question => @statement.question }

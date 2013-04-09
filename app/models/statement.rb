@@ -1,5 +1,5 @@
 class Statement < ActiveRecord::Base
-  attr_accessible :answer, :question
+  attr_accessible :answer, :question, :user_id
 
   validates :question, :presence => true
   validates :question, :length => {:minimum => 5 }
