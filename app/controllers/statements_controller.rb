@@ -10,7 +10,7 @@ class StatementsController < ApplicationController
 
     if request.xhr?
       statement = (params.slice("question", "answer", "user_id"))
-      statement.user_id = statement.user_id.to_i
+      statement[:user_id] = statement[:user_id].to_i
       @statement = Statement.create(statement)
       if @statement.save
         render :json => { :status => 'true', :question => @statement.question }
