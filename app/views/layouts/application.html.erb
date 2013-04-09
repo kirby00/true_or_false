@@ -12,8 +12,12 @@
   <div class="container-fluid">
   <header>
     <nav>
-      <a href="#">login via twitter</a>
-      <a href="#"></a>
+      <% if current_user %>
+        Signed in as <%= current_user.name %>!
+        <%= link_to "Sign out", signout_path %>
+      <% else %>
+        <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+      <% end %>
     </nav>
   </header>
 
