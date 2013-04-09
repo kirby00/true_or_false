@@ -1,5 +1,8 @@
 TrueOrFalse::Application.routes.draw do
+  get "answers/create"
+
   resources :statements
+  resources :answers
 
   root :to => 'home#index'
 

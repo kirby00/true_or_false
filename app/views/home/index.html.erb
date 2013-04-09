@@ -41,7 +41,12 @@
   <% @statements.each do |statement| %>
     <li class="row-fluid">
       <p><%= statement.question %></p>
-      <a href="#">true</a> <a href="#">false</a>
+      <div class="answer_links">
+        <% if current_user %>
+        <a href="<%= session[:user_id] %>/<%= statement.id %>/true">true</a>
+        <a href="<%= session[:user_id] %>/<%= statement.id %>/false">false</a>
+      <% end %>
+      </div>
     </li>
   <% end %>
 </ul>

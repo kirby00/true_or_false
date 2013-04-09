@@ -41,5 +41,51 @@ $(document).ready(function() {
     e.preventDefault();
   });
 
+  $('a').click(function(){
+    this
+  });
+/*
+$('#questions li a').bind('click', function(e) {
+    var href = $(this).attr('href');
+    var data = href.split("/");
+    alert("user_id: " + data[0] +
+          "question_id: " + data[1] +
+          "user_answer: " + data[2]
+      );
+    e.preventDefault();
+  });
+*/
+
+
+
+  $('#questions a').bind('click', function(e) {
+    var href = $(this).attr('href');
+    var data = href.split("/");
+
+    $.ajax({
+      url: "/answers",
+      type: "post",
+      context: this,
+      data: {
+        'user_id'     : data[0],
+        'question_id' : data[1],
+        'user_answer' : data[2]
+      },
+
+      success: function(response)
+      {
+        if(response.status == "true")
+        {
+          $(this).parent().hide();
+        } else {
+          $('body').prepend('<div class="alert alert-error">System Error: answer not saved to database.</div>');
+        }
+
+      }
+    });
+    e.preventDefault();
+  });
+
+
 
 });
