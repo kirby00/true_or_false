@@ -28,7 +28,6 @@
   ul#questions li.answered {background: none;}
   ul#questions li.answered p {color: #333; }
   .answered a {display:none}
-  div.info {  }
 
   .icon-ok { color: #519548; }
   .icon-remove { color: #92000D; }
@@ -61,7 +60,7 @@
     margin: 0;
   }
 
-  div.info { position: relative; background-color: #fff; height: 1px; height: auto;}
+  div.info { position: relative; background-color: #fff; height: 1px; margin-bottom: 50px;}
   h3.author { margin: 0 0 0 0; padding: 0 0 0 0;}
   ul#questions h3 { float: left; font-size: 14px; color: #999; font-family: lato; font-weight: normal; padding: 0 0 0 20px;}
 

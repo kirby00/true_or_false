@@ -9,7 +9,10 @@ class StatementsController < ApplicationController
   end
 
   def get_statements
-    @statements = Statement.limit(10).offset(params[:id])
+    #@statements = Statement.limit(10).offset(params[:id]) #put in model
+
+    @statements = Statement.order("id DESC").where("id < ?", params[:id]).limit(10)
+
     # if current_user
     #   @answers = Answer.find_all_by_user_id(session[:user_id])
     # end
