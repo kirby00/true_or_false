@@ -38,32 +38,38 @@
 
  <div class="row-fluid">
   <div class="span8 offset2">
+
   <ul id="questions" >
   <% @statements.each do |statement| %>
 
       <% if @answers %>
-        <li id="<%= statement.id %>" class="row-fluid answered">
-        <p><%= statement.question %></p>
-
-        <div class="info">
 
         <% if answer = @answers.find {|answer| answer.matches_current_user?(statement) } %>
-          <div class="your-answer">
-            <h4 class="your-answer">your answer: <%= answer.user_answer %></h4><span class="icon-ok"></span>
+         <li id="<%= statement.id %>" class="row-fluid answered">
+          <p><%= statement.question %></p>
+
+          <div class="info">
+            <div class="your-answer">
+              <h4 class="your-answer">your answer: <%= answer.user_answer %></h4><span class="icon-ok"></span>
+            </div>
           </div>
 
         <% else %>
+
           <li id="<%= statement.id %>" class="row-fluid">
           <p><%= statement.question %></p>
 
-          <div class="answer_links">
-            <a href="<%= session[:user_id] %>/<%= statement.id %>/true">true</a>
-            <a href="<%= session[:user_id] %>/<%= statement.id %>/false">false</a>
+          <div class="info">
+            <div class="answer_links">
+              <a href="<%= session[:user_id] %>/<%= statement.id %>/true">true</a>
+              <a href="<%= session[:user_id] %>/<%= statement.id %>/false">false</a>
+            </div>
           </div>
+
         <% end %>
 
-        </div>
       <% else %>
+
         <li id="<%= statement.id %>" class="row-fluid answered">
         <p><%= statement.question %></p>
 
@@ -76,11 +82,14 @@
           </div>
           <% end %>
         </div>
+
+
       <% end %>
 
-    </li>
-  <% end %>
+        </li>
+<% end %>
 </ul>
+
 <div id="ajax_loader"><%= image_tag("ajax-loader.gif") %></div>
 </div>
 </div>
