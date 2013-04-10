@@ -13,74 +13,148 @@
  *= require_self
  */
 
-  div.modal-body #submit{display:none}
-  div.modal-body textarea{width:90%;height:200px}
-  ul#questions{list-style:none;margin:0;padding:0px;width:100%}
-  li{margin:20px 0;padding:0px;background-color:#fff;border-radius:5px;position: relative;}
-  li p{padding:20px 0 20px 20px;font-family:georgia;font-size:32px;line-height:1.5em;color:#333}
-  body{background: #efefef url('bkgd.gif') 0 0;}
-  header{padding:20px;height:70px;position:relative; border-bottom: 1px solid #ddd; margin-bottom: 40px;}
-  #logo{font-family:Lato;font-weight:300;font-size:48px}
-  header nav{position:absolute;right:40px;top:48px}
-  .instructions {border-radius:5px;background-color:#fff;padding:20px;font-size:22px; margin-bottom: 30px;}
-  .instructions span { color: #4CA1EA; padding-right: 10px; font-size: 38px; float: left; margin-left: 80px;}
-  .instructions p { float: left; margin: 9px 0 0 20px;}
-  ul#questions li.answered {background: none;}
-  ul#questions li.answered p {color: #333; }
-  .answered a {display:none}
+body { background: #efefef url('bkgd.gif') 0 0; }
 
-  .icon-ok { color: #519548; }
-  .icon-remove { color: #92000D; }
+header {
+  padding: 20px;
+  height: 70px;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 40px;
+}
 
-  div.your-answer {
-    width: 180px;
-    position: absolute;
-    right: 20px;
-    top: 6px;
-    padding: 0;
-  }
-  div.your-answer h4 {
-    margin: 0;
-    font-size: 14px;
-    font-weight: normal;
-    width: 116px;
-    padding: 3px 6px 4px 8px;
-    background-color: rgba(0,0,0,0.04);
-    border-radius: 3px 0 0 3px;
-    float: left;
-    margin-right: 1px;
-  }
-  div.your-answer span {
-    padding: 6px 6px 7px 7px;
-    background-color: rgba(0,0,0,0.04);
-    border-radius: 0 3px 3px 0;
-    float: left;
-    position: relative;
-    font-size: 14px;
-    margin: 0;
-  }
+#logo {
+  font-family: Lato;
+  font-weight: 300;
+  font-size: 48px
+}
 
-  div.info { position: relative; background-color: #fff; height: 1px; margin-bottom: 50px;}
-  h3.author { margin: 0 0 0 0; padding: 0 0 0 0;}
-  ul#questions h3 { float: left; font-size: 14px; color: #999; font-family: lato; font-weight: normal; padding: 0 0 0 20px;}
+header nav {
+  position: absolute;
+  right: 40px;
+  top: 48px
+}
 
-  footer { margin-top: 20px; border-top: 1px solid #ddd; padding-top: 20px; min-height: 100px; }
+div.modal-body #submit { display:none }
+div.modal-body textarea { width: 90%; height: 200px }
 
-  div.answer_links { float: right; width: 160px; padding-bottom: 20px;}
+ul#questions {
+  list-style: none;
+  margin: 0;
+  padding: 0px;
+  width: 100%
+}
 
-  div.answer_links a {
-    padding: 6px 6px 7px 7px;
-    background-color: rgba(0,0,0,0.04);
-    border-radius: 3px;
-    position: relative;
-    font-size: 14px;
-    margin-right: 10px;
-    color: #444;
-  }
-    div.answer_links a:hover {
-    padding: 6px 6px 7px 7px;
-    background-color: rgba(0,0,0,0.09);
-    text-decoration: none;
-  }
-  a.true:hover { color: #519548;}
-  a.false:hover { color: #92000D;}
+li {
+  margin:20px 0;
+  padding:0px;
+  background-color: #fff;
+  border-radius: 5px;
+  position: relative;
+}
+
+li p {
+  padding: 20px 0 20px 20px;
+  font-family: georgia;
+  font-size: 32px;
+  line-height: 1.5em;
+  color: #333
+}
+
+.instructions {
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 20px;
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.instructions span {
+  color: #4CA1EA;
+  padding-right: 10px;
+  font-size: 38px;
+  float: left;
+  margin-left: 80px;
+}
+
+.instructions p { float: left; margin: 9px 0 0 20px; }
+ul#questions li.answered { background: none; }
+ul#questions li.answered p { color: #333; }
+.answered a { display: none }
+.icon-ok { color: #519548; }
+.icon-remove { color: #92000D; }
+a.true:hover { color: #519548; }
+a.false:hover { color: #92000D; }
+
+div.your-answer {
+  width: 180px;
+  position: absolute;
+  right: 20px;
+  top: 6px;
+  padding: 0;
+}
+
+div.your-answer h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+  width: 116px;
+  padding: 3px 6px 4px 8px;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px 0 0 3px;
+  float: left;
+  margin-right: 1px;
+}
+
+div.your-answer span {
+  padding: 6px 6px 7px 7px;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 0 3px 3px 0;
+  float: left;
+  position: relative;
+  font-size: 14px;
+  margin: 0;
+}
+
+div.info {
+  position: relative;
+  background-color: #fff;
+  height: 1px;
+  margin-bottom: 50px;
+}
+
+h3.author { margin: 0; padding: 0; }
+
+ul#questions h3 {
+  float: left;
+  font-size: 14px;
+  color: #999;
+  font-family: lato;
+  font-weight: normal;
+  padding: 0 0 0 20px;
+}
+
+div.answer_links { float: right; width: 160px; padding-bottom: 20px;}
+
+div.answer_links a {
+  padding: 6px 6px 7px 7px;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+  position: relative;
+  font-size: 14px;
+  margin-right: 10px;
+  color: #444;
+}
+
+div.answer_links a:hover {
+  padding: 6px 6px 7px 7px;
+  background-color: rgba(0,0,0,0.09);
+  text-decoration: none;
+}
+
+footer {
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  min-height: 100px;
+}

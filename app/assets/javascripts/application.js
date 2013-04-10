@@ -19,9 +19,8 @@ $(document).ready(function() {
 
   $("#ajax_loader").hide();
 
-
   $('#add-question').submit(function(e) {
-    // $(".questions:last").load('/statements', data)
+
     $.ajax({
       url: "/statements",
       type: "post",
@@ -33,15 +32,11 @@ $(document).ready(function() {
         {
           $('body').prepend('<div class="alert alert-success">Question added to database.</div>');
           $('#addQuestion').modal('hide');
-          $('ul').prepend(
-            '<li class="row-fluid"><p>' + response.question +
+          $('ul').prepend('<li class="row-fluid"><p>' + response.question +
             '</p><div class="info"><div class="answer_links"><a href="' + response.session_id +
-            '/' + response.question_id +
-            '/true">true</a><a href="' + response.session_id +
-            '/' + response.question_id  +
-            '/false">false</a></div></div></li>'
+            '/' + response.question_id + '/true">true</a><a href="' + response.session_id +
+            '/' + response.question_id + '/false">false</a></div></div></li>'
           );
-          // $('ul').prepend('<li class="row-fluid"><p>' + response.question + '</p><div class="info"><div class="answer_links"><a href="' + <%= session[:user_id] %> + '/' + <%= response.question_id %> + '/true">true</a><a href="' + <%= session[:user_id] %> + '/' + <%= response.question_id %> + '/false">false</a></div></div></li>');
         } else {
           $('body').prepend('<div class="alert alert-error">Question not saved to database.</div>');
           $('#addQuestion').modal('hide');
@@ -50,10 +45,6 @@ $(document).ready(function() {
       }
     });
     e.preventDefault();
-  });
-
-  $('a').click(function(){
-    this
   });
 
 $(window).scroll(function() {
@@ -87,8 +78,6 @@ $(window).scroll(function() {
     }
   });
 
-
-
   $('#questions a').bind('click', function(e) {
     var href = $(this).attr('href');
     var data = href.split("/");
@@ -116,7 +105,5 @@ $(window).scroll(function() {
     });
     e.preventDefault();
   });
-
-
 
 });
