@@ -50,6 +50,8 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    font-awesome-rails (3.0.2.0)
+      railties (>= 3.1)
     formatador (0.2.4)
     guard (1.7.0)
       formatador (>= 0.2.4)
@@ -136,6 +138,7 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    sqlite3 (1.3.7)
     taps (0.3.24)
       rack (>= 1.0.1)
       rest-client (>= 1.4.0, < 1.7.0)
@@ -163,6 +166,7 @@ DEPENDENCIES
   annotate
   coffee-rails (~> 3.2.1)
   debugger
+  font-awesome-rails
   guard
   guard-rails
   guard-test
@@ -171,6 +175,7 @@ DEPENDENCIES
   pg
   rails (= 3.2.12)
   sass-rails (~> 3.2.3)
+  sqlite3
   taps
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)

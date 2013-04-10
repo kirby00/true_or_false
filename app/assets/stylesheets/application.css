@@ -8,42 +8,80 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
 
-div.modal-body #submit { display: none; }
-div.modal-body textarea { width: 90%; height: 200px; }
-ul#questions{ list-style: none; margin: 0; padding: 0px; width: 100%;}
-li { margin: 20px 0; padding: 0px; background-color: #fff; border-radius: 5px;}
-li p { padding: 20px 0 20px 20px; font-family: georgia; font-size: 32px; line-height: 1.5em; color: #222;}
-body { background: #efefef; }
+  div.modal-body #submit{display:none}
+  div.modal-body textarea{width:90%;height:200px}
+  ul#questions{list-style:none;margin:0;padding:0px;width:100%}
+  li{margin:20px 0;padding:0px;background-color:#fff;border-radius:5px;position: relative;}
+  li p{padding:20px 0 20px 20px;font-family:georgia;font-size:32px;line-height:1.5em;color:#333}
+  body{background: #efefef url('bkgd.gif') 0 0;}
+  header{padding:20px;height:70px;position:relative; border-bottom: 1px solid #ddd; margin-bottom: 40px;}
+  #logo{font-family:Lato;font-weight:300;font-size:48px}
+  header nav{position:absolute;right:40px;top:48px}
+  .instructions {border-radius:5px;background-color:#fff;padding:20px;font-size:22px; margin-bottom: 30px;}
+  .instructions span { color: #4CA1EA; padding-right: 10px; font-size: 38px; float: left; margin-left: 80px;}
+  .instructions p { float: left; margin: 9px 0 0 20px;}
+  ul#questions li.answered {background: none;}
+  ul#questions li.answered p {color: #333; }
+  .answered a {display:none}
+  div.info {  }
 
-header {
-  padding : 20px;
-  height: 110px;
-  position: relative;
-}
-#logo {
-  font-family: Lato;
-  font-weight: 100;
-  font-size: 48px;
-}
-header nav {
-  position: absolute;
-  right: 20px;
-  top: 40px;
-}
+  .icon-ok { color: #519548; }
+  .icon-remove { color: #92000D; }
 
-.instructions {
-  border-radius: 5px;
-  background-color: #fff;
-  padding: 20px;
-  font-size: 22px;
-}
+  div.your-answer {
+    width: 180px;
+    position: absolute;
+    right: 20px;
+    top: 6px;
+    padding: 0;
+  }
+  div.your-answer h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+    width: 116px;
+    padding: 3px 6px 4px 8px;
+    background-color: rgba(0,0,0,0.04);
+    border-radius: 3px 0 0 3px;
+    float: left;
+    margin-right: 1px;
+  }
+  div.your-answer span {
+    padding: 6px 6px 7px 7px;
+    background-color: rgba(0,0,0,0.04);
+    border-radius: 0 3px 3px 0;
+    float: left;
+    position: relative;
+    font-size: 14px;
+    margin: 0;
+  }
 
-.answered {
-  background-color: transparent;
-}
+  div.info { position: relative; background-color: #fff; height: 1px; height: auto;}
+  h3.author { margin: 0 0 0 0; padding: 0 0 0 0;}
+  ul#questions h3 { float: left; font-size: 14px; color: #999; font-family: lato; font-weight: normal; padding: 0 0 0 20px;}
 
-.answered a { display: none;}
+  footer { margin-top: 20px; border-top: 1px solid #ddd; padding-top: 20px; min-height: 100px; }
+
+  div.answer_links { float: right; width: 160px; padding-bottom: 20px;}
+
+  div.answer_links a {
+    padding: 6px 6px 7px 7px;
+    background-color: rgba(0,0,0,0.04);
+    border-radius: 3px;
+    position: relative;
+    font-size: 14px;
+    margin-right: 10px: 0;
+    color: #444;
+  }
+    div.answer_links a:hover {
+    padding: 6px 6px 7px 7px;
+    background-color: rgba(0,0,0,0.09);
+    text-decoration: none;
+  }
+  a.true:hover { color: #519548;}
+  a.false:hover { color: #92000D;}

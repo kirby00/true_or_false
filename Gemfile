@@ -14,6 +14,7 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'twitter-bootstrap-rails'
+  gem 'font-awesome-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -23,7 +24,8 @@ end
 
 group :development do
   gem 'annotate'
-  gem 'taps'
+  gem 'taps', :require => false
+  gem 'sqlite3', :require => false
   gem 'guard'
   gem 'guard-rails'
 end
