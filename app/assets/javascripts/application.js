@@ -33,7 +33,15 @@ $(document).ready(function() {
         {
           $('body').prepend('<div class="alert alert-success">Question added to database.</div>');
           $('#addQuestion').modal('hide');
-          $('ul').prepend('<li class="row-fluid"><p>' + response.question + '</p><div class="info"><div class="answer_links"><a href="' + <%= session[:user_id] %> + '/' + <%= response.question_id %> + '/true">true</a><a href="' + <%= session[:user_id] %> + '/' + <%= response.question_id %> + '/false">false</a></div></div></li>');
+          $('ul').prepend(
+            '<li class="row-fluid"><p>' + response.question +
+            '</p><div class="info"><div class="answer_links"><a href="' + response.session_id +
+            '/' + response.question_id +
+            '/true">true</a><a href="' + response.session_id +
+            '/' + response.question_id  +
+            '/false">false</a></div></div></li>'
+          );
+          // $('ul').prepend('<li class="row-fluid"><p>' + response.question + '</p><div class="info"><div class="answer_links"><a href="' + <%= session[:user_id] %> + '/' + <%= response.question_id %> + '/true">true</a><a href="' + <%= session[:user_id] %> + '/' + <%= response.question_id %> + '/false">false</a></div></div></li>');
         } else {
           $('body').prepend('<div class="alert alert-error">Question not saved to database.</div>');
           $('#addQuestion').modal('hide');

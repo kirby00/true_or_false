@@ -22,7 +22,7 @@ class StatementsController < ApplicationController
       statement[:user_id] = statement[:user_id].to_i
       @statement = Statement.create(statement)
       if @statement.save
-        render :json => { :status => 'true', :question => @statement.question, :question_id => @statement.id }
+        render :json => { :status => 'true', :question => @statement.question, :question_id => @statement.id, :session_id => session[:user_id] }
       else
         render :json => { :status => 'false' }
       end
