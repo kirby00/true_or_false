@@ -40,9 +40,7 @@
   <ul id="questions" >
   <% @statements.each do |statement| %>
 
-
-
-    <li class="row-fluid">
+    <li id="<%= statement.id %>" class="row-fluid">
 
       <p><%= statement.question %></p>
 
@@ -68,10 +66,9 @@
     </li>
   <% end %>
 </ul>
+<div id="ajax_loader"><%= image_tag("ajax-loader.gif") %></div>
 </div>
 </div>
-
-<%= @answers.inspect %>
 
 
 

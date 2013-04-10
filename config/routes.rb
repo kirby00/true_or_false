@@ -9,6 +9,7 @@ TrueOrFalse::Application.routes.draw do
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
+  match 'statements/get_statements/:id' => 'statements#get_statements'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

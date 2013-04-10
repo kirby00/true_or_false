@@ -1,13 +1,22 @@
 class StatementsController < ApplicationController
+
   def index
+
   end
 
   def new
     @statement = Statement.new
   end
 
-  def create
+  def get_statements
+    @statements = Statement.limit(10).offset(params[:id])
+    # if current_user
+    #   @answers = Answer.find_all_by_user_id(session[:user_id])
+    # end
+    render :layout => false
+  end
 
+  def create
     if request.xhr?
       statement = (params.slice("question", "answer", "user_id"))
       statement[:user_id] = statement[:user_id].to_i
