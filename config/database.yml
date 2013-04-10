@@ -49,5 +49,4 @@ production:
   encoding: unicode
   database: true_or_false_production
   pool: 5
-  username: true_or_false
-  password:
+  host: localhost
