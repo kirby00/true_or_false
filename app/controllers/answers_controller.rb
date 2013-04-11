@@ -4,7 +4,7 @@ class AnswersController < ApplicationController
       answer = (params.slice("question_id", "user_answer", "user_id"))
       answer[:user_id] = answer[:user_id].to_i
       answer[:question_id] = answer[:question_id].to_i
-      answer[:user_answer] = !!answer[:user_answer]
+      answer[:user_answer] = answer[:user_answer] == 'true'
       @answer = Answer.create(answer)
       if @answer.save
         render :json => { :status => 'true' }

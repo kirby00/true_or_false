@@ -63,6 +63,9 @@
             <div class="answer_links">
               <a href="<%= session[:user_id] %>/<%= statement.id %>/true">true</a>
               <a href="<%= session[:user_id] %>/<%= statement.id %>/false">false</a>
+        <!--  <a href="#" data-statement-id=<%= statement.id %>/true>true</a> -->
+        <!-- <%= link_to "true", "#", "data-statement-id" => statement.id, "data-answer" => "true" %> -->
+
             </div>
           </div>
 
@@ -70,7 +73,7 @@
 
       <% else %>
 
-        <li id="<%= statement.id %>" class="row-fluid answered">
+        <li id="<%= statement.id %>" class="row-fluid">
         <p><%= statement.question %></p>
 
         <div class="info">
