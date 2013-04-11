@@ -8,8 +8,7 @@ class AnswersController < ApplicationController
       answer[:question_id] = answer[:question_id].to_i
       answer[:user_answer] = answer[:user_answer] == "true"
 
-      @answer = Answer.create!(answer)
-      if @answer.saved?
+      if Answer.create(answer)
         render :json => { :status => 'true' }
       else
         render :json => { :status => 'false' }
