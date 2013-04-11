@@ -78,6 +78,7 @@ $(window).scroll(function() {
     }
   });
 
+
   $('#questions a').bind('click', function(e) {
     var href = $(this).attr('href');
     var data = href.split("/");
@@ -99,7 +100,22 @@ $(window).scroll(function() {
       {
         if(response.status == "true")
         {
+          var list_item = $(this).parent().parent().parent();
+          var infoDiv = $(this).parent().parent();
+
           $(this).parent().hide();
+
+          var statement_answer = response.answer;
+          debugger
+          if(statement_answer == response.user_answer) {
+            var answer_html = '<span class="icon-ok"></span>';
+          } else {
+            var answer_html = '<span class="icon-remove"></span>';
+          }
+
+          $(infoDiv).html('<div class="your-answer"> <h4 class="your-answer">your answer:' + response.user_answer + '</h4>' + answer_html + '</div>');
+          $(list_item).css({"background-color": "transparent"});
+
         } else {
           $('body').prepend('<div class="alert alert-error">System Error: answer not saved to database.</div>');
         }

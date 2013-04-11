@@ -9,7 +9,8 @@ class AnswersController < ApplicationController
       answer[:user_answer] = answer[:user_answer] == "true"
 
       if Answer.create(answer)
-        render :json => { :status => 'true' }
+        statement = Statement.find(answer[:question_id])
+        render :json => { :status => 'true', :user_answer => answer[:user_answer].to_s, :answer => statement.answer.to_s }
       else
         render :json => { :status => 'false' }
       end
