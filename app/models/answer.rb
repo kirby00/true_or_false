@@ -3,7 +3,7 @@ class Answer < ActiveRecord::Base
 
   validates :user_id, :presence => true
   validates :question_id, :presence => true
-  validates :user_answer, :presence => true
+  validates_inclusion_of :user_answer, :in => [true, false]
 
   def matches_current_user?(statement)
     question_id == statement.id
