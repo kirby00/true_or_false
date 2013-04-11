@@ -18,7 +18,6 @@ class StatementTest < ActiveSupport::TestCase
     assert !statement.save
   end
 
-
   test "answer is present" do
     statement = StatementFactory.no_answer
     assert !statement.save

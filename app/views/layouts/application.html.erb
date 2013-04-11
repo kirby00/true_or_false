@@ -9,6 +9,10 @@
   <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
+  <% if current_user %>
+    <%= hidden_field_tag :session_id, session[:user_id] %>
+    <div id='session-id' data-value='<% session[:user_id] %>'>
+  <% end %>
   <div class="container-fluid">
   <header>
     <h1 id="logo">True || False ?</h1>

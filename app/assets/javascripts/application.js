@@ -81,6 +81,9 @@ $(window).scroll(function() {
   $('#questions a').bind('click', function(e) {
     var href = $(this).attr('href');
     var data = href.split("/");
+    // var sessionId = Helpers.sessionId();
+    // var statementId = $(this).attr('data-statement-id');
+    // var answer = $(this).attr("data-answer");
 
     $.ajax({
       url: "/answers",

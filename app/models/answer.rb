@@ -8,4 +8,8 @@ class Answer < ActiveRecord::Base
   def matches_current_user?(statement)
     question_id == statement.id
   end
+
+  def self.user_answers(session_id)
+    find_all_by_user_id(session_id)
+  end
 end
