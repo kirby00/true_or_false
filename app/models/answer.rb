@@ -3,13 +3,13 @@ class Answer < ActiveRecord::Base
 
   validates :user_id, :presence => true
   validates :question_id, :presence => true
-  validates :user_answer, :presence => true
+  validates_inclusion_of :user_answer, :in => [true, false]
 
   def matches_current_user?(statement)
     question_id == statement.id
   end
 
-  def self.user_answers(session_id)
-    find_all_by_user_id(session_id)
+  def self.user_answers(user_id)
+    find_all_by_user_id(user_id)
   end
 end

@@ -1,5 +1,6 @@
 require 'test_helper'
 require_relative '../factories/statement_factory'
+require_relative '../factories/answer_factory'
 
 class StatementTest < ActiveSupport::TestCase
 
@@ -21,6 +22,13 @@ class StatementTest < ActiveSupport::TestCase
   test "answer is present" do
     statement = StatementFactory.no_answer
     assert !statement.save
+  end
+
+  test "can find answer" do
+    statement = StatementFactory.question_with_id
+    answer = AnswerFactory.with_all_attributes
+    answers = [answer]
+    assert_equal answer, statement.find_answer(answers)
   end
 
 end

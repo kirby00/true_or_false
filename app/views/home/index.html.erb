@@ -46,15 +46,19 @@
 
       <% if @answers %>
 
-          <% if answer = @answers.find {|answer| answer.matches_current_user?(statement) } %>
-          if user_has_answered_question
-          answer = Answer.has_answered?(statement)
+          <% if answer = statement.find_answer(@answers) %>
+
            <li id="<%= statement.id %>" class="row-fluid answered">
             <p><%= statement.question %></p>
 
             <div class="info">
               <div class="your-answer">
-                <h4 class="your-answer">your answer: <%= answer.user_answer %></h4><span class="icon-ok"></span>
+                <h4 class="your-answer">your answer: <%= answer.user_answer %></h4>
+                <% if answer.user_answer == statement.answer %>
+                  <span class="icon-ok"></span>
+                <% else %>
+                  <span class="remove-ok"></span>
+                <% end %>
               <!-- need to add code for when user gives incorrect answer -->
               </div>
             </div>

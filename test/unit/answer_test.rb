@@ -1,4 +1,5 @@
 require 'test_helper'
+require_relative '../factories/statement_factory'
 require_relative '../factories/answer_factory'
 
 class AnswerTest < ActiveSupport::TestCase
@@ -19,7 +20,10 @@ class AnswerTest < ActiveSupport::TestCase
   end
 
   test "can show if user answer is correct answer" do
+    statement = StatementFactory.question_with_id
+    answer = AnswerFactory.with_all_attributes
 
+    assert_equal answer.user_answer, statement.answer
   end
 
   test "can show total number of answers for a question" do

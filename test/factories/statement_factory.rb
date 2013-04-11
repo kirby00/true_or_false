@@ -19,5 +19,9 @@ class StatementFactory
     def no_answer
       Statement.new(:question => "one plus one is two", :answer => nil)
     end
+
+    def question_with_id
+      Statement.new(:question => "statement will have answer", :answer => true, :id => 1)
+    end
   end
 end
