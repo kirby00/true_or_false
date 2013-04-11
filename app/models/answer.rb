@@ -9,7 +9,7 @@ class Answer < ActiveRecord::Base
     question_id == statement.id
   end
 
-  def self.user_answers(session_id)
-    find_all_by_user_id(session_id)
+  def self.user_answers(user_id)
+    find_all_by_user_id(user_id)
   end
 end
