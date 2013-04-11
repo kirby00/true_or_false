@@ -6,4 +6,8 @@ class Statement < ActiveRecord::Base
   validates :question, :length => {:maximum => 250 }
 
   validates :answer, :presence => true
+
+  def self.latest
+    Statement.order("id DESC").limit(10)
+  end
 end
