@@ -23,5 +23,9 @@ class StatementFactory
     def question_with_id
       Statement.new(:question => "statement will have answer", :answer => true, :id => 1)
     end
+
+    def question_with_id_save
+      Statement.create(:question => "statement will have answer", :answer => true, :id => 1)
+    end
   end
 end

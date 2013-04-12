@@ -16,4 +16,8 @@ class Answer < ActiveRecord::Base
   def self.number_of_answers(statement)
     self.where(:question_id => statement.id).count
   end
+
+  def self.correct_answer_count(statement)
+    self.where(:question_id => statement.id, :user_answer => statement.answer).count
+  end
 end

@@ -34,7 +34,10 @@ class AnswerTest < ActiveSupport::TestCase
   end
 
   test "can return total number of correct answers for a question" do
-
+    AnswerFactory.with_user_id_1
+    AnswerFactory.with_user_id_2
+    statement = StatementFactory.question_with_id_save
+    assert_equal 1, Answer.correct_answer_count(statement)
   end
 
   test "can return correct answers as proportion of total answers" do

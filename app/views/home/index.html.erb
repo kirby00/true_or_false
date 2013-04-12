@@ -59,7 +59,7 @@
                 <% else %>
                   <span class="icon-remove"></span>
                 <% end %>
-                <h4 class="your-answer">question score: <%= Answer.number_of_answers(statement) %></h4>
+                <h4 class="your-answer">question score: <%= Answer.correct_answer_count(statement) %> / <%= Answer.number_of_answers(statement) %></h4>
               </div>
             </div>
 
