@@ -199,7 +199,31 @@ footer {
   font-size: 38px;
   float: left;
   margin-left: 10px;
-}
+  }
 
-.instructions p { float: left; margin: 9px 0 0 20px; }
+  .instructions p { float: left; margin: 9px 0 0 20px; }
+
+  div.your-answer  {
+    position: relative;
+    right: 0;
+    top: 0;
+    padding: 0;
+    display: block;
+  }
+
+  div.your-answer h4.your-answer {
+    clear: left;
+    float: left;
+    margin: 10px 0;
+    width: 119px;
+  }
+
+  span.icon-ok { position: relative; top: 10px; left: 1px;}
+  span.icon-remove { position: relative; top: 10px; left: 1px;}
+
+  h2.author {
+    float: none;
+    position: relative;
+    left: 0;
+  }
 }
