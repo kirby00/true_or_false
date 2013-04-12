@@ -89,7 +89,7 @@
 
                 <div class="your-answer">
 
-                  <% unless statement.user_id == author.id %>
+                  <% unless statement.user_id == current_user.id %>
 
                     <div class="answer_links">
                       <a href="<%= session[:user_id] %>/<%= statement.id %>/true">true</a>
