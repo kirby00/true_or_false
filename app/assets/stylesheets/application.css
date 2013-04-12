@@ -42,7 +42,7 @@ ul#questions {
   list-style: none;
   margin: 0;
   padding: 0px;
-  width: 100%
+  width: 100%;
 }
 
 li {
@@ -67,6 +67,7 @@ li p {
   padding: 20px;
   font-size: 22px;
   margin-bottom: 30px;
+  position: relative;
 }
 
 .instructions span {
@@ -87,12 +88,14 @@ a.true:hover { color: #519548; }
 a.false:hover { color: #92000D; }
 
 div.your-answer {
-  width: 180px;
+  width: 360px;
   position: absolute;
   right: 20px;
   top: 6px;
   padding: 0;
 }
+
+
 
 div.your-answer h4 {
   margin: 0;
@@ -105,6 +108,8 @@ div.your-answer h4 {
   float: left;
   margin-right: 1px;
 }
+
+div.your-answer h4.score { margin-right: 20px; width: 140px; }
 
 div.your-answer span {
   padding: 6px 6px 7px 7px;
@@ -121,7 +126,16 @@ div.info {
   height: 38px;
 }
 
-h3.author { margin: 0; padding: 0; }
+h2.author {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: normal;
+  float: left;
+  position: relative;
+  left: 20px;
+  color: #666;
+}
 
 ul#questions h3 {
   float: left;
@@ -150,7 +164,11 @@ div.answer_links a:hover {
   text-decoration: none;
 }
 
-div#ajax_loader { margin: 20px auto;}
+div#ajax_loader { margin: 20px auto; width: 200px; text-align: center;}
+
+.new-question { border: 3px solid rgba(76, 161, 234, 0.25);}
+
+.instruction-button { position: absolute; right: 70px; top: 25px; }
 
 footer {
   margin-top: 20px;

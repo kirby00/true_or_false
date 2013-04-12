@@ -1,39 +1,55 @@
 <% @statements.each do |statement| %>
 
-
+  <% author = User.author(statement) %>
 
   <% if @answers %>
 
     <% if answer = @answers.find {|answer| answer.matches_current_user?(statement) } %>
 
+        <!-- if current statement has been answered by logged in user -->
+
         <li id="<%= statement.id %>" class="row-fluid answered">
         <p><%= statement.question %></p>
-        <h4><%= answer.user_answer %></h4>
+
+        <div class="info">
+          <h4 class="author">author: <%= author.name %></h4>
+          <h4><%= answer.user_answer %></h4>
+        </div>
 
     <% else %>
+
+      <!-- current statement has not been answered -->
 
       <li id="<%= statement.id %>" class="row-fluid">
       <p><%= statement.question %></p>
 
       <div class="info">
+        <h4 class="author">author: <%= author.name %></h4>
+        <% unless statement.user_id == author.id %>
         <div class="answer_links">
           <a href="<%= session[:user_id] %>/<%= statement.id %>/true">true</a>
           <a href="<%= session[:user_id] %>/<%= statement.id %>/false">false</a>
         </div>
+        <% end %>
       </div>
     <% end %>
 
   <% else %>
+
+    <!-- if no answers or not logged in -->
 
     <li id="<%= statement.id %>" class="row-fluid">
     <p><%= statement.question %></p>
 
     <% if current_user %>
     <div class="info">
+      <h4 class="author">author: <%= author.name %></h4>
+      <% unless statement.user_id == author.id %>
       <div class="answer_links">
         <a href="<%= session[:user_id] %>/<%= statement.id %>/true">true</a>
         <a href="<%= session[:user_id] %>/<%= statement.id %>/false">false</a>
       </div>
+      <% end %>
     </div>
     <% end %>
   <% end %>

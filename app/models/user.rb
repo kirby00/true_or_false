@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
       user.name = auth["info"]["nickname"]
     end
   end
+
+  def self.author(statement)
+    self.find_by_id(statement.user_id)
+  end
 end
