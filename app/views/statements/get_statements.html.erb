@@ -12,8 +12,14 @@
         <p><%= statement.question %></p>
 
         <div class="info">
-          <h4 class="author">author: <%= author.name %></h4>
-          <h4><%= answer.user_answer %></h4>
+
+          <h2 class="author">submitted by: <%= author.name %></h2>
+
+          <div class="your-answer">
+            <h4><%= answer.user_answer %></h4>
+
+          </div>
+
         </div>
 
     <% else %>
@@ -24,13 +30,20 @@
       <p><%= statement.question %></p>
 
       <div class="info">
-        <h4 class="author">author: <%= author.name %></h4>
+
+        <h2 class="author">submitted by: <%= author.name %></h2>
+
+        <div class="your-answer">
+
         <% unless statement.user_id == author.id %>
-        <div class="answer_links">
-          <a href="<%= session[:user_id] %>/<%= statement.id %>/true">true</a>
-          <a href="<%= session[:user_id] %>/<%= statement.id %>/false">false</a>
-        </div>
+          <div class="answer_links">
+            <a href="<%= session[:user_id] %>/<%= statement.id %>/true">true</a>
+            <a href="<%= session[:user_id] %>/<%= statement.id %>/false">false</a>
+          </div>
         <% end %>
+
+        </div>
+
       </div>
     <% end %>
 
@@ -43,14 +56,24 @@
 
     <% if current_user %>
     <div class="info">
-      <h4 class="author">author: <%= author.name %></h4>
-      <% unless statement.user_id == author.id %>
-      <div class="answer_links">
-        <a href="<%= session[:user_id] %>/<%= statement.id %>/true">true</a>
-        <a href="<%= session[:user_id] %>/<%= statement.id %>/false">false</a>
-      </div>
+
+      <h2 class="author">submitted by: <%= author.name %></h2>
+
+      <div class="your-answer">
+
+        <% unless statement.user_id == author.id %>
+
+        <div class="answer_links">
+          <a href="<%= session[:user_id] %>/<%= statement.id %>/true">true</a>
+          <a href="<%= session[:user_id] %>/<%= statement.id %>/false">false</a>
+        </div>
+
       <% end %>
+
+      </div>
+
     </div>
+
     <% end %>
   <% end %>
 </li>

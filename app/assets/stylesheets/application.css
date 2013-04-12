@@ -17,7 +17,7 @@ body { background: #efefef url('bkgd.gif') 0 0; }
 
 header {
   padding: 20px;
-  height: 70px;
+  min-height: 70px;
   position: relative;
   border-bottom: 1px solid #ddd;
   margin-bottom: 40px;
@@ -28,6 +28,8 @@ header {
   font-weight: 300;
   font-size: 48px
 }
+
+#logo span { color: #3b9aec; font-weight: 400; }
 
 header nav {
   position: absolute;
@@ -68,6 +70,7 @@ li p {
   font-size: 22px;
   margin-bottom: 30px;
   position: relative;
+  overflow: hidden;
 }
 
 .instructions span {
@@ -175,4 +178,28 @@ footer {
   border-top: 1px solid #ddd;
   padding-top: 20px;
   min-height: 100px;
+}
+
+footer {
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+
+  header nav {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: 20px;
+  }
+
+  .instructions span {
+  color: #4CA1EA;
+  padding-right: 10px;
+  font-size: 38px;
+  float: left;
+  margin-left: 10px;
+}
+
+.instructions p { float: left; margin: 9px 0 0 20px; }
 }

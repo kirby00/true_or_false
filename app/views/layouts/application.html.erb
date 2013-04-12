@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TrueOrFalse</title>
+  <title>True || False</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= favicon_link_tag image_path("favicon.ico") %>
@@ -18,10 +18,9 @@
   <% end %>
   <div class="container-fluid">
   <header>
-    <h1 id="logo">True || False ?</h1>
+    <h1 id="logo">True <span>||</span> False ?</h1>
     <nav>
       <% if current_user %>
-        Signed in as <%= current_user.name %>!
         <%= link_to "Sign out", signout_path %>
       <% else %>
         <%= link_to "Sign in with Twitter", "/auth/twitter" %>
@@ -33,7 +32,7 @@
   <%= yield %>
 
   <div class="row-fluid">
-  <footer> </footer>
+  <footer> <p>true || false by Max &amp;&amp; Rob </footer>
 </div>
 </div>
 

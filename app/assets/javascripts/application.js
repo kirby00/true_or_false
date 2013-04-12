@@ -19,6 +19,8 @@ $(document).ready(function() {
 
   $("#ajax_loader").hide();
 
+  $('.score').tipsy({gravity: 's', fallback: "correct answers / total answers" });
+
   $('#add-question').submit(function(e) {
 
     $.ajax({
