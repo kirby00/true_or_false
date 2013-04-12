@@ -12,4 +12,8 @@ class Answer < ActiveRecord::Base
   def self.user_answers(user_id)
     find_all_by_user_id(user_id)
   end
+
+  def self.number_of_answers(statement)
+    self.where(:question_id => statement.id).count
+  end
 end

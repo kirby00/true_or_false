@@ -21,5 +21,18 @@ class AnswerFactory
     def with_incorrect_answer
       Answer.new(:user_id => 1, :question_id => 1, :user_answer => false)
     end
+
+    def with_user_id_1
+      Answer.create(:user_id => 1, :question_id => 1, :user_answer => true)
+    end
+
+    def with_user_id_2
+      Answer.create(:user_id => 2, :question_id => 1, :user_answer => false)
+    end
+
+    def with_user_id_3
+      Answer.create(:user_id => 3, :question_id => 1, :user_answer => false)
+    end
+
   end
 end
